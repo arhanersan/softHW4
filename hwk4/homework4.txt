@@ -2,3 +2,143 @@ STEP A
 git config --global user.name "arhan"
 git config --global user.email "arhanersan@gmail.com"
 git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+STEP B
+git clone https://github.com/arhanersan/softHW4.git
+Files in my local .git directory
+HEAD			    file
+Config			  file
+Description		file
+hooks/			  folder
+index			    file
+info/			    folder
+logs/			    folder
+objects/		  folder
+packed-refs		file
+refs/			    folder
+
+STEP C
+[web page of The Department of Software Engineering of Işık University]( https://www.isikun.edu.tr/akademik/muhendislik-fakultesi/bolumler-ve-programlar/bilgisayar-muhendisligi/programlar/lisans-programi/yazilim-muhendisligi )
+
+STEP D
+rules are in my .gitignore
+-----------------------------
+Compiled class file
+*.class
+# Log file
+*.log
+# BlueJ files
+*.ctxt
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
+
+STEP E and F
+commits I’ve made on the feature-1 branch is
+
+git log
+commit 8a0198fd2e3af9a3a226497669077d0515f3b729 (HEAD -> feature-1)
+Author: arhan <arhanersan@gmail.com>
+Date:   Thu Jan 11 16:03:04 2024 +0300
+
+    satisfying reuirement one
+
+File in my main and feature-1 branch
+arhan@LAPTOP-EN237I9M MINGW64 ~/Documents/SOFTHW4/softHW4/hmk1 (main)
+$ dir
+Build
+
+
+arhan@LAPTOP-EN237I9M MINGW64 ~/Documents/SOFTHW4/softHW4/hmk1 (feature-1)
+$ dir
+build  build.xml  manifest.mf  nbproject  src
+
+STEP G H I J
+
+git log
+commit da41b7414e226c48504b452b008a0fe217d22c58 (HEAD -> feature-2)
+Author: arhan <arhanersan@gmail.com>
+Date:   Thu Jan 11 17:02:19 2024 +0300
+
+    satisfying requirement two
+
+STEP K L M
+in main branch;
+git diff feature-1
+git diff feature-2
+git diff feature-3
+
+ git diff feature-1
+diff --git a/hmk1/src/SoftHwNumbers/SoftHwNumbers.java b/hmk1/src/SoftHwNumbers/SoftHwNumbers.java
+index c58177b..4e22efa 100644
+--- a/hmk1/src/SoftHwNumbers/SoftHwNumbers.java
++++ b/hmk1/src/SoftHwNumbers/SoftHwNumbers.java
+@@ -12,9 +12,15 @@ public class SoftHwNumbers {
+         System.out.println("Enter the second number:");
+         int num2 = scanner.nextInt();
+
+-        System.out.println("The numbers between " + num1 + " and " + num2 + " are:");
++        System.out.println("The odd numbers between " + num1 + " and " + num2 + " are:");
+         for (int i = num1 + 1; i < num2; i++) {
+-            System.out.print(i+",");
++<<<<<<< HEAD
++            if (i % 2 != 0) {
++=======
++            if (i % 2 == 0) {
++>>>>>>> feature-3
++                System.out.print(i + ",");
++            }
+         }
+
+$ git diff feature-2
+diff --git a/hmk1/src/SoftHwNumbers/SoftHwNumbers.java b/hmk1/src/SoftHwNumbers/SoftHwNumbers.java
+index fb3545f..4e22efa 100644
+--- a/hmk1/src/SoftHwNumbers/SoftHwNumbers.java
++++ b/hmk1/src/SoftHwNumbers/SoftHwNumbers.java
+@@ -14,7 +14,11 @@ public class SoftHwNumbers {
+
+         System.out.println("The odd numbers between " + num1 + " and " + num2 + " are:");
+         for (int i = num1 + 1; i < num2; i++) {
++<<<<<<< HEAD
+             if (i % 2 != 0) {
++=======
++            if (i % 2 == 0) {
++>>>>>>> feature-3
+                 System.out.print(i + ",");
+             }
+         }
+
+$ git diff feature-3
+diff --git a/hmk1/src/SoftHwNumbers/SoftHwNumbers.java b/hmk1/src/SoftHwNumbers/SoftHwNumbers.java
+index 87a04ee..4e22efa 100644
+--- a/hmk1/src/SoftHwNumbers/SoftHwNumbers.java
++++ b/hmk1/src/SoftHwNumbers/SoftHwNumbers.java
+@@ -12,9 +12,13 @@ public class SoftHwNumbers {
+         System.out.println("Enter the second number:");
+         int num2 = scanner.nextInt();
+
+-        System.out.println("The even numbers between " + num1 + " and " + num2 + " are:");
++        System.out.println("The odd numbers between " + num1 + " and " + num2 + " are:");
+         for (int i = num1 + 1; i < num2; i++) {
++<<<<<<< HEAD
++            if (i % 2 != 0) {
++=======
+             if (i % 2 == 0) {
++>>>>>>> feature-3
+                 System.out.print(i + ",");
+             }
+         }
+
+
+
+
